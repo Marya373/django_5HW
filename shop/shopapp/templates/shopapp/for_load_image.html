@@ -1,0 +1,22 @@
+{% extends 'shopapp/base.html' %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'static/css/style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    <title> Все заказы {{ name_client }} </title>
+{% endblock %}
+
+{% block content %}
+
+    <h1>форма для загрузки изображения продукта:</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Загрузить</button>
+    </form>
+
+{% endblock %}
