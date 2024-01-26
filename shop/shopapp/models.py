@@ -29,7 +29,7 @@ class Client(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    price = models.DecimalField(max_digits=20, decimal_places=10)
+    price = models.DecimalField(max_digits=20, decimal_places=2)
     quantity = models.IntegerField(validators=[MinValueValidator(1)])
     date_time_additions_product = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='photos_products/', blank=True, null=True)
