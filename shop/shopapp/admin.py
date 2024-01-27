@@ -12,6 +12,7 @@ class ProductAdmin(admin.ModelAdmin):
     ordering=['name', 'quantity']
     list_filter=['date_time_additions_product']
     search_fields =['name']
+    actions = [reset_quantity]
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['client', 'date_time_placing_order']
